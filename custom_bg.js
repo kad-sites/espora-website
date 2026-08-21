@@ -18,7 +18,7 @@
         let isMobile = w <= 768;
         spacing = isMobile ? 30 : 50;
         gridSizeX = isMobile ? 50 : 90;
-        gridSizeZ = isMobile ? 60 : 60;
+        gridSizeZ = isMobile ? 120 : 60;
     }
     window.addEventListener('resize', resize);
     resize();
