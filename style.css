@@ -219,7 +219,7 @@ section {
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 37px;
     line-height: 1.1;
     margin: 0 0 24px 0;
     font-weight: 500;
@@ -680,7 +680,7 @@ section {
         justify-content: flex-start;
     }
     .hero h1 {
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 600;
         line-height: 1.2;
         letter-spacing: -1px;
