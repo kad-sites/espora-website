@@ -724,6 +724,9 @@ section {
 }
 
 @media (max-width: 600px) {
+    .scroll-fade {
+        display: none;
+    }
     .logo-container {
         transform: translateX(0);
     }
