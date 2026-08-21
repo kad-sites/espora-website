@@ -258,6 +258,7 @@ section {
 .widget {
     background: var(--surface-color);
     border: 1px solid var(--border-color);
+    border-right: 4px solid var(--accent);
     padding: 20px;
     border-radius: 16px;
     display: flex;
