@@ -50,11 +50,11 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     padding: 20px 6%;
     box-sizing: border-box;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     z-index: 100;
-    background: transparent;
+    background: rgba(26, 26, 26, 0.7);
 }
 
 .logo-container {
@@ -258,7 +258,6 @@ section {
 .widget {
     background: var(--surface-color);
     border: 1px solid var(--border-color);
-    border-right: 4px solid var(--accent);
     padding: 20px;
     border-radius: 16px;
     display: flex;
