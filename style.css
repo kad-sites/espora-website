@@ -319,7 +319,7 @@ section {
     background: transparent;
 }
 
-.mini-gauge svg {
+.mini-gauge > svg {
     position: absolute;
     top: 50%;
     left: 50%;
