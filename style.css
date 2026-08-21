@@ -420,11 +420,34 @@ section {
     animation: lg-pulse 3s infinite alternate ease-in-out;
 }
 
-.lg-fill.voltage {
-    background: linear-gradient(0deg, #ffeb3b, #fbc02d);
-    height: 85%;
+.gas-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(76, 175, 80, 0.4), transparent);
 }
 
+.gas-particle {
+    position: absolute;
+    background: rgba(129, 199, 132, 0.8);
+    border-radius: 50%;
+    bottom: -10px;
+    animation: gas-rise infinite ease-in;
+    filter: blur(1px);
+}
+
+@keyframes gas-rise {
+    0% { transform: translateY(0) scale(0.5); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(-70px) scale(1.5); opacity: 0; }
+}
+
+.p1 { left: 4px; width: 8px; height: 8px; animation-duration: 2.4s; animation-delay: 0s; }
+.p2 { left: 14px; width: 5px; height: 5px; animation-duration: 3.1s; animation-delay: 0.5s; }
+.p3 { left: 8px; width: 10px; height: 10px; animation-duration: 3.5s; animation-delay: 1.2s; }
+.p4 { left: 16px; width: 6px; height: 6px; animation-duration: 2.7s; animation-delay: 1.8s; }
 .lg-fill.power {
     background: linear-gradient(0deg, #ff7043, #d84315);
     height: 45%;
