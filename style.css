@@ -175,7 +175,7 @@ main {
 section {
     width: 100%;
     max-width: 1200px;
-    padding: 20px;
+    padding: 60px 20px;
     box-sizing: border-box;
     scroll-margin-top: 100px;
 }
@@ -672,7 +672,7 @@ section {
         display: none;
     }
     section {
-        padding: 20px 12px;
+        padding: 40px 12px;
     }
     .hero {
         padding: 120px 20px 40px 20px;
