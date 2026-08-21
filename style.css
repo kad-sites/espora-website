@@ -190,7 +190,7 @@ section {
     font-weight: 600;
     color: var(--accent);
     margin: 0 0 12px 0;
-    letter-spacing: 0px;
+    letter-spacing: 0.5px;
 }
 
 .section-header p {
