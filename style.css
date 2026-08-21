@@ -755,7 +755,7 @@ section {
     .cta-group {
         flex-direction: row;
         width: 80%;
-        margin: 0 auto 180px auto;
+        margin: 0 auto 40px auto;
         gap: 8px;
     }
     .cta-group button {
@@ -786,14 +786,17 @@ section {
         display: none;
     }
     
-    /* Side-by-side transparent mobile widgets */
+    /* Mobile dashboard widgets */
     .dashboard-mockup {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
     }
     .widget {
-        padding: 10px;
-        gap: 8px;
+        padding: 16px;
+        gap: 12px;
         background: rgba(49, 49, 49, 0.95);
     }
     .w-icon {
