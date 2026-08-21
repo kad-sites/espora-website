@@ -613,6 +613,7 @@ section {
     margin: 0;
 }
 
+/* Responsive UI / Mobile UX */
 @media (max-width: 900px) {
     .bento-grid, .audience-grid, .faq-grid {
         grid-template-columns: 1fr;
@@ -629,13 +630,74 @@ section {
     .nav-links {
         display: none;
     }
-    .dashboard-mockup {
-        grid-template-columns: 1fr;
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 20px 12px;
+    }
+    .hero {
+        padding: 100px 20px 40px 20px;
     }
     .hero h1 {
-        font-size: 40px;
+        font-size: 26px;
+        line-height: 1.2;
+        letter-spacing: -1px;
+    }
+    .subtitle {
+        font-size: 12px;
+        margin-bottom: 24px;
+    }
+    .cta-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    .cta-button {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        font-size: 13px;
+        padding: 10px 16px;
+    }
+    .outline-box {
+        padding: 32px 20px;
+        border-radius: 24px;
+    }
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: left;
     }
     .footer-links {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+    .nav-actions a:not(.cta-button) {
+        display: none;
+    }
+    
+    /* Side-by-side transparent mobile widgets */
+    .dashboard-mockup {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .widget {
+        padding: 10px;
+        gap: 8px;
+        background: rgba(49, 49, 49, 0.4);
+    }
+    .w-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+    .w-info span {
+        font-size: 10px;
+    }
+    .w-info strong {
+        font-size: 12px;
     }
 }
