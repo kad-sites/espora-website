@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom 3D Wireframe Canvas</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #050505;
+    }
+    canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+</head>
+<body>
+<canvas id="meshCanvas"></canvas>
+
+<script>
+    const canvas = document.getElementById('meshCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let cols, rows, spacing;
+    let points = [];
+    
+    // Custom Camera Setup
+    const camera = { x: 0, y: 700, z: -800, pitch: -0.7 };
+    const fov = 700;
+
+    // Mouse tracking variables
+    let targetMx = 0;
+    let targetMz = 1000;
+    let mx = targetMx;
+    let mz = targetMz;
+
+    let time = 0;
+
+    // Handle responsive grid sizing
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const isMobile = window.innerWidth < 768;
+        // Adjust grid density to maintain performance on mobile
+        cols = isMobile ? 35 : 75;
+        rows = isMobile ? 40 : 80;
+        spacing = isMobile ? 60 : 45;
+        
+        // Initialize the point grid on the X/Z plane
+        points = [];
+        for(let i = 0; i < rows; i++) {
+            let row = [];
+            for(let j = 0; j < cols; j++) {
+                row.push({
+                    x: (j - cols/2) * spacing,
+                    z: -400 + i * spacing
+                });
+            }
+            points.push(row);
+        }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    // Map 2D mouse coordinates to 3D spatial targets
+    window.addEventListener('mousemove', (e) => {
+        let nx = e.clientX / window.innerWidth; 
+        let ny = e.clientY / window.innerHeight;
+        
+        targetMx = (nx - 0.5) * (cols * spacing) * 1.2; 
+        targetMz = -400 + (1 - ny) * (rows * spacing) * 1.2;
+    });
+    
+    // Support touch devices
+    window.addEventListener('touchmove', (e) => {
+        let nx = e.touches[0].clientX / window.innerWidth; 
+        let ny = e.touches[0].clientY / window.innerHeight;
+        targetMx = (nx - 0.5) * (cols * spacing) * 1.2; 
+        targetMz = -400 + (1 - ny) * (rows * spacing) * 1.2;
+    });
+
+    // Custom 3D-to-2D Projection Function
+    function project(p) {
+        // 1. Translate relative to camera
+        let dx = p.x - camera.x;
+        let dy = p.y - camera.y;
+        let dz = p.z - camera.z;
+        
+        // 2. Rotate around the X-axis (Pitch)
+        let cosX = Math.cos(camera.pitch);
+        let sinX = Math.sin(camera.pitch);
+        
+        let dy1 = dy * cosX - dz * sinX;
+        let dz1 = dy * sinX + dz * cosX;
+        
+        // 3. Drop points behind the camera
+        if (dz1 < 1) return null; 
+        
+        // 4. Perspective depth scaling
+        let scale = fov / dz1;
+        return {
+            x: canvas.width / 2 + dx * scale,
+            y: canvas.height / 2 - dy1 * scale // standard screen Y is inverted
+        };
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        time += 0.02;
+
+        // Apply easing for smooth gravity well tracking
+        mx += (targetMx - mx) * 0.08;
+        mz += (targetMz - mz) * 0.08;
+
+        // Clear canvas with requested color
+        ctx.fillStyle = '#050505';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.lineWidth = 0.6;
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
+
+        let projected = [];
+        
+        // Step 1: Calculate 3D points and their 2D projections
+        for(let i = 0; i < rows; i++) {
+            projected[i] = [];
+            for(let j = 0; j < cols; j++) {
+                let p = points[i][j];
+                
+                // Base wavy satin cloth ripple using sin/cos
+                let y = Math.sin(p.x * 0.015 + time) * 30 + Math.cos(p.z * 0.015 + time) * 30;
+                
+                // Apply the Gaussian gravity well (sinkhole) around the mouse pointer
+                let distSq = (p.x - mx)**2 + (p.z - mz)**2;
+                let wellDepth = -600;
+                let wellRadiusSq = 80000;
+                y += wellDepth * Math.exp(-distSq / wellRadiusSq);
+                
+                projected[i][j] = project({x: p.x, y: y, z: p.z});
+            }
+        }
+
+        // Step 2: Draw the interconnected wireframe
+        ctx.beginPath();
+        for(let i = 0; i < rows; i++) {
+            for(let j = 0; j < cols; j++) {
+                let p1 = projected[i][j];
+                if (!p1) continue;
+                
+                // Connect to the point on the right
+                if (j < cols - 1) {
+                    let p2 = projected[i][j+1];
+                    if (p2) {
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                    }
+                }
+                
+                // Connect to the point below
+                if (i < rows - 1) {
+                    let p3 = projected[i+1][j];
+                    if (p3) {
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p3.x, p3.y);
+                    }
+                }
+            }
+        }
+        ctx.stroke(); // Single batch stroke for high performance
+    }
+
+    animate();
+</script>
+</body>
+</html>
