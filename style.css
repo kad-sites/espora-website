@@ -665,6 +665,7 @@ section {
     .subtitle {
         font-size: 9px;
         margin-bottom: 24px;
+        text-align: justify;
     }
     .cta-group {
         flex-direction: row;
