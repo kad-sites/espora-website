@@ -650,7 +650,8 @@ section {
     }
     .cta-group {
         flex-direction: row;
-        width: 100%;
+        width: 80%;
+        margin: 0 auto;
         gap: 8px;
     }
     .cta-group button {
