@@ -228,6 +228,19 @@ section {
     margin-bottom: 80px;
 }
 
+.hero .cta-group button {
+    background: var(--surface-color);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    box-shadow: none;
+}
+
+.hero .cta-group button:hover {
+    background: rgba(255, 138, 0, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
 /* Dashboard Mockup */
 .dashboard-mockup {
     display: grid;
