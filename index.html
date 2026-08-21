@@ -49,9 +49,35 @@
                     <div class="w-icon">💡</div>
                     <div class="w-info"><span>Living Room</span><strong>ON</strong></div>
                 </div>
-                <div class="widget w-temp">
-                    <div class="w-icon">🌡️</div>
-                    <div class="w-info"><span>Temperature</span><strong>24.5°C</strong></div>
+                <div class="widget w-temp" style="justify-content: space-evenly; padding: 10px;">
+                    <div class="mini-gauge">
+                        <svg viewBox="0 0 100 100">
+                            <defs>
+                                <linearGradient id="hum-grad-mini" x1="0%" y1="100%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#e0f7fa" />
+                                    <stop offset="50%" stop-color="#00bcd4" />
+                                    <stop offset="100%" stop-color="#01579b" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M 20 80 A 40 40 0 1 1 80 80" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="12" stroke-linecap="round" />
+                            <path class="mg-hum-fill" d="M 20 80 A 40 40 0 1 1 80 80" fill="none" stroke="url(#hum-grad-mini)" stroke-width="12" stroke-linecap="round" stroke-dasharray="188.5" />
+                        </svg>
+                        <span class="mg-icon">💧</span>
+                    </div>
+                    <div class="mini-gauge">
+                        <svg viewBox="0 0 100 100">
+                            <defs>
+                                <linearGradient id="temp-grad-mini" x1="0%" y1="100%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#fff59d" />
+                                    <stop offset="50%" stop-color="#ffb300" />
+                                    <stop offset="100%" stop-color="#bf360c" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M 20 80 A 40 40 0 1 1 80 80" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="12" stroke-linecap="round" />
+                            <path class="mg-temp-fill" d="M 20 80 A 40 40 0 1 1 80 80" fill="none" stroke="url(#temp-grad-mini)" stroke-width="12" stroke-linecap="round" stroke-dasharray="188.5" />
+                        </svg>
+                        <span class="mg-icon">🌡️</span>
+                    </div>
                 </div>
                 <div class="widget w-fan">
                     <div class="w-icon">🌀</div>
