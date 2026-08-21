@@ -649,16 +649,17 @@ section {
         margin-bottom: 24px;
     }
     .cta-group {
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
-        gap: 12px;
+        gap: 8px;
     }
     .cta-button {
         width: 100%;
+        flex: 1;
         text-align: center;
         justify-content: center;
         font-size: 13px;
-        padding: 10px 16px;
+        padding: 8px 12px;
     }
     .outline-box {
         padding: 32px 20px;
