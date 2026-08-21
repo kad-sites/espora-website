@@ -368,6 +368,80 @@ section {
     100% { stroke-dashoffset: 80; }
 }
 
+/* Vertical Linear Gauges */
+.v-gauge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.water-tank-container {
+    width: 24px;
+    height: 60px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.water-wave {
+    position: absolute;
+    bottom: -120px;
+    left: -63px;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(180deg, #00bcd4, #01579b);
+    border-radius: 40%;
+    animation: wave-spin 3s linear infinite;
+}
+
+@keyframes wave-spin {
+    100% { transform: rotate(360deg); }
+}
+
+.lg-track {
+    width: 12px;
+    height: 60px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.lg-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 6px;
+    animation: lg-pulse 3s infinite alternate ease-in-out;
+}
+
+.lg-fill.voltage {
+    background: linear-gradient(0deg, #ffeb3b, #fbc02d);
+    height: 85%;
+}
+
+.lg-fill.power {
+    background: linear-gradient(0deg, #ff7043, #d84315);
+    height: 45%;
+}
+
+@keyframes lg-pulse {
+    0% { transform: scaleY(0.95); transform-origin: bottom; }
+    100% { transform: scaleY(1.05); transform-origin: bottom; }
+}
+
+.vg-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #e0e0e0;
+}
+
+
 /* Content Sections */
 .text-block {
     font-weight: 400;
