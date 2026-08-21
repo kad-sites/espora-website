@@ -79,7 +79,7 @@
             }
         }
         
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)'; 
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)'; 
         ctx.lineWidth = 0.8;
         ctx.beginPath();
         
