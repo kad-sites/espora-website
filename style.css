@@ -37,8 +37,8 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 5%, black 25%);
-    mask-image: linear-gradient(to bottom, transparent 0%, transparent 5%, black 25%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 70px, black 300px);
+    mask-image: linear-gradient(to bottom, transparent 0%, transparent 70px, black 300px);
 }
 
 /* Navbar */
