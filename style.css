@@ -444,14 +444,18 @@ section {
     100% { transform: translateY(-70px) scale(1.5); opacity: 0; }
 }
 
-.p1 { left: 4px; width: 3px; height: 3px; animation-duration: 2.1s; animation-delay: 0s; }
-.p2 { left: 14px; width: 4px; height: 4px; animation-duration: 2.8s; animation-delay: 0.3s; }
-.p3 { left: 8px; width: 5px; height: 5px; animation-duration: 3.2s; animation-delay: 1.0s; }
-.p4 { left: 18px; width: 3px; height: 3px; animation-duration: 2.4s; animation-delay: 1.5s; }
-.p5 { left: 10px; width: 4px; height: 4px; animation-duration: 2.9s; animation-delay: 0.8s; }
-.p6 { left: 2px; width: 5px; height: 5px; animation-duration: 3.5s; animation-delay: 2.1s; }
-.p7 { left: 16px; width: 3px; height: 3px; animation-duration: 2.2s; animation-delay: 0.6s; }
-.p8 { left: 6px; width: 4px; height: 4px; animation-duration: 3.0s; animation-delay: 1.7s; }
+.p1 { left: 4px; width: 2px; height: 2px; animation-duration: 2.1s; animation-delay: 0s; }
+.p2 { left: 14px; width: 1px; height: 1px; animation-duration: 2.8s; animation-delay: 0.3s; }
+.p3 { left: 8px; width: 3px; height: 3px; animation-duration: 3.2s; animation-delay: 1.0s; }
+.p4 { left: 18px; width: 2px; height: 2px; animation-duration: 2.4s; animation-delay: 1.5s; }
+.p5 { left: 10px; width: 1px; height: 1px; animation-duration: 2.9s; animation-delay: 0.8s; }
+.p6 { left: 2px; width: 3px; height: 3px; animation-duration: 3.5s; animation-delay: 2.1s; }
+.p7 { left: 16px; width: 2px; height: 2px; animation-duration: 2.2s; animation-delay: 0.6s; }
+.p8 { left: 6px; width: 2px; height: 2px; animation-duration: 3.0s; animation-delay: 1.7s; }
+.p9 { left: 12px; width: 3px; height: 3px; animation-duration: 2.6s; animation-delay: 0.4s; }
+.p10 { left: 20px; width: 1px; height: 1px; animation-duration: 3.1s; animation-delay: 1.3s; }
+.p11 { left: 5px; width: 2px; height: 2px; animation-duration: 2.3s; animation-delay: 1.9s; }
+.p12 { left: 17px; width: 2px; height: 2px; animation-duration: 3.4s; animation-delay: 0.2s; }
 .lg-fill.power {
     background: linear-gradient(0deg, #ff7043, #d84315);
     height: 45%;
