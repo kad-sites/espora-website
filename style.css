@@ -804,10 +804,8 @@ section {
         height: 32px;
         font-size: 16px;
     }
-    .w-info span {
-        font-size: 10px;
-    }
+    .w-info span,
     .w-info strong {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
