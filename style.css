@@ -660,7 +660,8 @@ section {
         justify-content: flex-start;
     }
     .hero h1 {
-        font-size: 19px;
+        font-size: 22px;
+        font-weight: 600;
         line-height: 1.2;
         letter-spacing: -1px;
     }
