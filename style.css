@@ -356,6 +356,17 @@ section {
     100% { stroke-dashoffset: 70; }
 }
 
+.mg-co2-fill {
+    stroke-dashoffset: 188.5;
+    animation: mg-fill-co2 4s infinite alternate ease-in-out;
+    animation-delay: -0.5s;
+}
+
+@keyframes mg-fill-co2 {
+    0% { stroke-dashoffset: 170; }
+    100% { stroke-dashoffset: 80; }
+}
+
 /* Content Sections */
 .text-block {
     font-weight: 400;

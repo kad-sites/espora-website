@@ -88,6 +88,24 @@
                             </svg>
                         </span>
                     </div>
+                    <div class="mini-gauge">
+                        <svg viewBox="0 0 100 100">
+                            <defs>
+                                <linearGradient id="co2-grad-mini" x1="0%" y1="100%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#c8e6c9" />
+                                    <stop offset="50%" stop-color="#4caf50" />
+                                    <stop offset="100%" stop-color="#1b5e20" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M 20 80 A 40 40 0 1 1 80 80" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="12" stroke-linecap="round" />
+                            <path class="mg-co2-fill" d="M 20 80 A 40 40 0 1 1 80 80" fill="none" stroke="url(#co2-grad-mini)" stroke-width="12" stroke-linecap="round" stroke-dasharray="188.5" />
+                        </svg>
+                        <span class="mg-icon">
+                            <svg viewBox="0 0 24 24" fill="#4caf50" width="18" height="18" style="display:block;">
+                                <path d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20C19,20,22,3,22,3,21,5,14,5.25,9,6.25S2,11.5,2,13.5a6.22,6.22,0,0,0,1.75,3.75C7,8,17,8,17,8Z"/>
+                            </svg>
+                        </span>
+                    </div>
                 </div>
                 <div class="widget w-fan">
                     <div class="w-icon">🌀</div>
