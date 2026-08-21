@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: none;
     z-index: 100;
     background: rgba(26, 26, 26, 0.7);
 }
