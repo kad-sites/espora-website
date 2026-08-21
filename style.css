@@ -646,6 +646,9 @@ section {
 }
 
 @media (max-width: 600px) {
+    .logo-container {
+        transform: translateX(-20%);
+    }
     section {
         padding: 20px 12px;
     }
