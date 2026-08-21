@@ -16,9 +16,9 @@
         w = canvas.width = window.innerWidth;
         h = canvas.height = window.innerHeight;
         let isMobile = w <= 768;
-        spacing = isMobile ? 30 : 50;
-        gridSizeX = isMobile ? 50 : 90;
-        gridSizeZ = isMobile ? 120 : 60;
+        spacing = isMobile ? 24 : 40;
+        gridSizeX = isMobile ? 65 : 120;
+        gridSizeZ = isMobile ? 150 : 80;
     }
     window.addEventListener('resize', resize);
     resize();
