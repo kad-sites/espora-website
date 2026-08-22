@@ -686,25 +686,45 @@ section {
 }
 
 
-/* ESP Popout Animation */
+/* ESP Split Layout */
+.flex-split {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+.split-text {
+    flex: 1;
+}
+.split-graphic {
+    flex-shrink: 0;
+    width: 140px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ESP Popout Animation (Inside Box) */
 .esp-popout {
-    position: absolute;
-    left: -140px; /* Outside the 1200px boundary */
-    top: 50%;
-    transform: translateY(-50%) translateX(-50px) rotate(-10deg);
     opacity: 0;
-    transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
-    z-index: 10;
+    transform: translateY(30px) rotate(5deg);
+    transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .esp-popout.active {
-    transform: translateY(-50%) translateX(0) rotate(0deg);
     opacity: 1;
+    transform: translateY(0) rotate(0deg);
 }
 .esp-board-svg {
-    width: 120px;
-    height: 180px;
+    width: 140px;
+    height: 210px;
     filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6));
+    animation: float-chip 6s ease-in-out infinite;
 }
+@keyframes float-chip {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
 .data-stream {
     stroke-dasharray: 20 200;
     stroke-dashoffset: 220;
@@ -725,9 +745,17 @@ section {
     100% { stroke-dashoffset: -20; }
 }
 
-@media (max-width: 1450px) {
-    .esp-popout {
-        display: none; /* Hide when there is no room in the left margin */
+@media (max-width: 768px) {
+    .flex-split {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .split-text .section-header, 
+    .split-text .text-block {
+        text-align: center !important;
+    }
+    .esp-board-svg {
+        margin-bottom: 30px;
     }
 }
 
