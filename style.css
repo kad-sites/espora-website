@@ -232,7 +232,7 @@ section {
 }
 
 .gradient-text {
-    background: linear-gradient(180deg, #FFFFFF 0%, #bbbbbb 100%);
+    background: linear-gradient(180deg, #FFB74D 0%, var(--accent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
