@@ -657,8 +657,8 @@ section {
 .mc-switch-container {
     width: 36px;
     height: 18px;
-    margin-top: 11px;
-    margin-bottom: 11px;
+    margin-top: 15px;
+    margin-bottom: 7px;
     background: rgba(0,0,0,0.6);
     border: 1px solid rgba(255,255,255,0.05);
     border-radius: 9px;
