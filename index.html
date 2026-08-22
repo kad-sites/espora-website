@@ -206,7 +206,29 @@
         </section>
 
         <!-- Why ESP? -->
-        <section class="content-section" id="about">
+        <section class="content-section" id="about" style="position: relative;">
+            <div class="esp-popout" id="esp-brain">
+                <!-- ESP32 Board SVG with Brain Signals -->
+                <svg class="esp-board-svg" viewBox="0 0 100 150">
+                    <!-- Base PCB -->
+                    <rect x="20" y="10" width="60" height="130" rx="4" fill="#222" />
+                    <!-- Left Pins -->
+                    <path d="M15,35 h5 m-5,10 h5 m-5,10 h5 m-5,10 h5 m-5,10 h5 m-5,10 h5 m-5,10 h5 m-5,10 h5" stroke="#888" stroke-width="2"/>
+                    <!-- Right Pins -->
+                    <path d="M80,35 h5 m-5,10 h5 m-5,10 h5 m-5,10 h5 m-5,10 h5 m-5,10 h5 m-5,10 h5 m-5,10 h5" stroke="#888" stroke-width="2"/>
+                    <!-- ESP Chip -->
+                    <rect x="30" y="55" width="40" height="40" rx="2" fill="#111" stroke="#333" stroke-width="1"/>
+                    <circle cx="35" cy="60" r="2" fill="#444"/>
+                    <!-- Antenna Area -->
+                    <rect x="20" y="10" width="60" height="30" rx="4" fill="#1a1a1a" />
+                    <path d="M30,30 v-8 h10 v8 h10 v-8 h10 v8" fill="none" stroke="#d4af37" stroke-width="2" stroke-linejoin="miter"/>
+                    
+                    <!-- Brain/Radio Signals -->
+                    <circle class="signal s1" cx="50" cy="75" r="10" fill="none" stroke="#00e5ff" stroke-width="2" />
+                    <circle class="signal s2" cx="50" cy="75" r="25" fill="none" stroke="#00e5ff" stroke-width="2" />
+                    <circle class="signal s3" cx="50" cy="75" r="40" fill="none" stroke="#00e5ff" stroke-width="2" />
+                </svg>
+            </div>
             <div class="outline-box">
                 <div class="section-header">
                     <h2>Why ESPORA?</h2>
@@ -440,6 +462,27 @@
         });
 
         boxes.forEach(box => observer.observe(box));
+
+        // ESP Popout Scroll Effect
+        const espPopout = document.getElementById('esp-brain');
+        const aboutSection = document.getElementById('about');
+        
+        if (espPopout && aboutSection) {
+            const espObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        espPopout.classList.add('active');
+                    } else {
+                        espPopout.classList.remove('active');
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '-20% 0px -20% 0px',
+                threshold: 0
+            });
+            espObserver.observe(aboutSection);
+        }
     </script>
 </body>
 </html>
