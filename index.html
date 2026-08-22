@@ -139,9 +139,34 @@
                         </span>
                     </div>
                 </div>
-                <div class="widget w-fan">
-                    <div class="w-icon">🌀</div>
-                    <div class="w-info"><span>Ceiling Fan</span><strong>Speed 3</strong></div>
+                <div class="widget w-charts" style="justify-content: space-evenly; padding: 10px;">
+                    <!-- Bar Chart -->
+                    <div class="mini-chart">
+                        <div class="mc-bar-container">
+                            <div class="mc-bar b1"></div>
+                            <div class="mc-bar b2"></div>
+                            <div class="mc-bar b3"></div>
+                            <div class="mc-bar b4"></div>
+                            <div class="mc-bar b5"></div>
+                        </div>
+                        <span class="mc-label">Stats</span>
+                    </div>
+                    <!-- Line Chart -->
+                    <div class="mini-chart">
+                        <svg class="mc-svg" viewBox="0 0 100 50">
+                            <polyline class="mc-line-path" points="0,40 25,30 40,45 60,15 75,25 100,5" fill="none" stroke="#ffeb3b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span class="mc-label">Trend</span>
+                    </div>
+                    <!-- Sine Chart -->
+                    <div class="mini-chart">
+                        <div class="mc-sine-container">
+                            <svg class="mc-sine-svg" viewBox="0 0 200 40">
+                                <path d="M0,20 Q12.5,0 25,20 T50,20 T75,20 T100,20 T125,20 T150,20 T175,20 T200,20" fill="none" stroke="#00bcd4" stroke-width="4" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <span class="mc-label">Wave</span>
+                    </div>
                 </div>
                 <div class="widget w-energy">
                     <div class="w-icon">⚡</div>

@@ -473,6 +473,88 @@ section {
 }
 
 
+/* Mini Charts */
+.mini-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 40px;
+}
+
+.mc-label {
+    font-size: 8px;
+    font-weight: 600;
+    color: #e0e0e0;
+}
+
+/* Bar Chart */
+.mc-bar-container {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2px;
+}
+
+.mc-bar {
+    width: 6px;
+    background: #4caf50;
+    border-radius: 2px 2px 0 0;
+    animation: bar-bounce infinite alternate ease-in-out;
+}
+
+.b1 { height: 40%; animation-duration: 0.5s; background: #8bc34a; }
+.b2 { height: 70%; animation-duration: 0.7s; background: #ffc107; }
+.b3 { height: 30%; animation-duration: 0.6s; background: #ff9800; }
+.b4 { height: 90%; animation-duration: 0.8s; background: #ff5722; }
+.b5 { height: 50%; animation-duration: 0.9s; background: #f44336; }
+
+@keyframes bar-bounce {
+    0% { transform: scaleY(0.5); transform-origin: bottom; }
+    100% { transform: scaleY(1.1); transform-origin: bottom; }
+}
+
+/* Line Chart */
+.mc-svg {
+    width: 40px;
+    height: 40px;
+    overflow: visible;
+}
+.mc-line-path {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    animation: line-draw 3s infinite linear;
+}
+@keyframes line-draw {
+    0% { stroke-dashoffset: 150; }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -150; }
+}
+
+/* Sine Chart */
+.mc-sine-container {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.mc-sine-svg {
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    animation: sine-scroll 1.5s linear infinite;
+}
+@keyframes sine-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50px); }
+}
+
+
 /* Content Sections */
 .text-block {
     font-weight: 400;
