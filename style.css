@@ -705,18 +705,24 @@ section {
     height: 180px;
     filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6));
 }
-.signal {
+.data-stream {
+    stroke-dasharray: 20 200;
+    stroke-dashoffset: 220;
     opacity: 0;
-    transform-origin: 50px 75px;
 }
-.esp-popout.active .signal.s1 { animation: pulse-signal 2s infinite 0.2s; }
-.esp-popout.active .signal.s2 { animation: pulse-signal 2s infinite 0.6s; }
-.esp-popout.active .signal.s3 { animation: pulse-signal 2s infinite 1.0s; }
+.esp-popout.active .data-stream {
+    opacity: 1;
+}
+.esp-popout.active .ds1 { animation: stream-anim 1.5s infinite linear; }
+.esp-popout.active .ds2 { animation: stream-anim 2s infinite linear 0.5s; }
+.esp-popout.active .ds3 { animation: stream-anim 1.2s infinite linear 0.2s; }
+.esp-popout.active .ds4 { animation: stream-anim 1.8s infinite linear 0.7s; }
+.esp-popout.active .ds5 { animation: stream-anim 1.6s infinite linear 0.4s; }
+.esp-popout.active .ds6 { animation: stream-anim 1.4s infinite linear 0.9s; }
 
-@keyframes pulse-signal {
-    0% { transform: scale(0.2); opacity: 0; stroke-width: 4; }
-    30% { opacity: 0.8; stroke: #00e5ff; }
-    100% { transform: scale(1.8); opacity: 0; stroke: rgba(0,229,255,0); stroke-width: 1; }
+@keyframes stream-anim {
+    0% { stroke-dashoffset: 220; }
+    100% { stroke-dashoffset: -20; }
 }
 
 @media (max-width: 1450px) {
