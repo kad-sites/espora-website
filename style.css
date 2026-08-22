@@ -46,17 +46,23 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     top: 0;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 6%;
-    box-sizing: border-box;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: none;
     z-index: 100;
     background: rgba(26, 26, 26, 0.7);
 }
+
+.nav-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    box-sizing: border-box;
+}
+
 .scroll-fade {
     position: fixed;
     top: 70px;
@@ -75,7 +81,6 @@ h1, h2, h3, h4, h5, h6 {
 .logo-container {
     display: flex;
     align-items: center;
-    transform: translateX(-40%);
 }
 
 .main-logo {
@@ -921,7 +926,7 @@ section {
     background: rgba(20, 20, 20, 0.8);
     backdrop-filter: blur(20px);
     border-top: 1px solid var(--border-color);
-    padding: 80px 6% 40px;
+    padding: 80px 20px 40px;
     box-sizing: border-box;
 }
 
