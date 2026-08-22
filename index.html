@@ -505,8 +505,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         espPopout.classList.add('active');
-                    } else {
-                        espPopout.classList.remove('active');
+                        espObserver.unobserve(entry.target);
                     }
                 });
             }, {
