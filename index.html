@@ -168,9 +168,43 @@
                         <span class="mc-label">Wave</span>
                     </div>
                 </div>
-                <div class="widget w-energy">
-                    <div class="w-icon">⚡</div>
-                    <div class="w-info"><span>Power Usage</span><strong>340 W</strong></div>
+                <div class="widget w-controls" style="justify-content: space-evenly; padding: 10px;">
+                    <!-- Rotary Dial -->
+                    <div class="mini-control">
+                        <div class="mc-dial-container">
+                            <svg class="mc-dial-track" viewBox="0 0 100 100">
+                                <path d="M 20 80 A 40 40 0 1 1 80 80" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="12" stroke-linecap="round" />
+                                <path class="mc-dial-fill" d="M 20 80 A 40 40 0 1 1 80 80" fill="none" stroke="#e91e63" stroke-width="12" stroke-linecap="round" stroke-dasharray="188.5" />
+                            </svg>
+                            <div class="mc-dial-knob">
+                                <div class="mc-dial-indicator"></div>
+                            </div>
+                        </div>
+                        <span class="mc-label">Dial</span>
+                    </div>
+                    <!-- Slider -->
+                    <div class="mini-control">
+                        <div class="mc-slider-container">
+                            <div class="mc-slider-track">
+                                <div class="mc-slider-fill"></div>
+                                <div class="mc-slider-thumb"></div>
+                            </div>
+                        </div>
+                        <span class="mc-label">Slider</span>
+                    </div>
+                    <!-- Numeric Display -->
+                    <div class="mini-control">
+                        <div class="mc-numeric-display">
+                            <span class="mc-digit-static">7</span>
+                            <div class="mc-digit-roller">
+                                <div class="mc-roller-numbers">
+                                    0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9
+                                </div>
+                            </div>
+                            <span class="mc-digit-static">%</span>
+                        </div>
+                        <span class="mc-label">Value</span>
+                    </div>
                 </div>
             </div>
         </section>

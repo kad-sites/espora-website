@@ -555,6 +555,138 @@ section {
 }
 
 
+/* Mini Controls */
+.mini-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 40px;
+}
+
+/* Rotary Dial */
+.mc-dial-container {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mc-dial-track {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+.mc-dial-knob {
+    width: 18px;
+    height: 18px;
+    background: #333;
+    border-radius: 50%;
+    border: 1px solid #555;
+    position: relative;
+    animation: dial-turn 3s infinite alternate ease-in-out;
+    box-shadow: inset 0 2px 4px rgba(255,255,255,0.1), 0 2px 4px rgba(0,0,0,0.5);
+}
+.mc-dial-indicator {
+    width: 3px;
+    height: 3px;
+    background: #e91e63;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 2px;
+    left: 7px;
+}
+.mc-dial-fill {
+    animation: dial-fill-anim 3s infinite alternate ease-in-out;
+}
+@keyframes dial-turn {
+    0% { transform: rotate(-135deg); }
+    100% { transform: rotate(135deg); }
+}
+@keyframes dial-fill-anim {
+    0% { stroke-dashoffset: 188.5; }
+    100% { stroke-dashoffset: 0; }
+}
+
+/* Vertical Slider */
+.mc-slider-container {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mc-slider-track {
+    width: 6px;
+    height: 40px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 3px;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.mc-slider-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #00e676;
+    border-radius: 3px;
+    animation: slider-fill-anim 2s infinite alternate ease-in-out;
+}
+.mc-slider-thumb {
+    width: 14px;
+    height: 6px;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
+    left: -4px;
+    animation: slider-thumb-anim 2s infinite alternate ease-in-out;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+@keyframes slider-fill-anim {
+    0% { height: 10%; }
+    100% { height: 90%; }
+}
+@keyframes slider-thumb-anim {
+    0% { bottom: 10%; transform: translateY(50%); }
+    100% { bottom: 90%; transform: translateY(50%); }
+}
+
+/* Numeric Display */
+.mc-numeric-display {
+    width: 40px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00e5ff;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+.mc-digit-roller {
+    height: 14px;
+    overflow: hidden;
+    line-height: 14px;
+    margin: 0 1px;
+}
+.mc-roller-numbers {
+    animation: roll-numbers 3s infinite steps(10);
+}
+@keyframes roll-numbers {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-140px); }
+}
+
+
 /* Content Sections */
 .text-block {
     font-weight: 400;
