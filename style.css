@@ -255,7 +255,7 @@ section {
 .hero .cta-group button {
     background: var(--surface-color);
     color: var(--accent);
-    border: 1px solid var(--accent);
+    border: none;
     box-shadow: none;
 }
 
